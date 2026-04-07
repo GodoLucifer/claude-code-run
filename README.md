@@ -44,6 +44,7 @@
 需要 [Bun](https://bun.sh) >= 1.1 和 Node.js >= 18。
 
 ```bash
+curl -fsSL https://bun.sh/install | bash
 npm install
 ```
 
