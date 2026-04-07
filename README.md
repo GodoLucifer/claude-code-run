@@ -45,6 +45,7 @@
 
 ```bash
 curl -fsSL https://bun.sh/install | bash
+（https://github.com/oven-sh/bun）
 npm install
 ```
 
