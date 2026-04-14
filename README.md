@@ -40,6 +40,11 @@
 ## 快速开始
 
 ### 1. 安装依赖
+```bash
+为什么 Bun 1.3 + 强制要求 AVX？
+AVX 是高级矢量扩展指令集，能大幅提升 CPU 的并行计算能力，Bun 1.3 + 为了优化打包编译、JS 引擎执行的性能，将 AVX 作为最低硬件要求，因此老 CPU（无 AVX）运行时会直接触发段错误（Segmentation fault）。
+而 Bun 1.2.5 及更早版本未强制依赖 AVX
+```
 
 需要 [Bun](https://bun.sh) >= 1.1 和 Node.js >= 18。
 
@@ -52,7 +57,14 @@ bun --version
 
 npm install
 ```
+```bash
+直接过滤 CPU 特性列表，查看是否包含avx/avx2，无输出则不支持：
+# 检查是否支持AVX（Bun 1.3+主要依赖）
+grep -o avx /proc/cpuinfo
 
+# 检查是否支持AVX2（进阶指令集）
+grep -o avx2 /proc/cpuinfo
+```
 安装node.js步骤（linux）
 ```bash
 确认发行版：
