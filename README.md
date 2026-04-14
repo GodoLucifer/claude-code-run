@@ -50,6 +50,53 @@ curl -fsSL https://bun.sh/install | bash -s "bun-v1.2.5"
 npm install
 ```
 
+安装node.js步骤（linux）
+```bash
+确认发行版：
+# 检查发行版和版本
+cat /etc/os-release
+# 检查系统架构
+uname -m
+# 示例输出
+# NAME="Ubuntu"
+# VERSION="20.04.3 LTS (Focal Fossa)"
+# Architecture: x86_64
+
+安装必要工具:
+# Ubuntu/Debian
+sudo apt update
+sudo apt install -y curl wget build-essential
+
+# CentOS/RHEL/Fedora
+sudo yum update
+sudo yum install -y curl wget gcc-c++ make
+
+
+安装NVM:
+# 使用curl安装
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# 或使用wget安装
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+配置环境:
+nvm --version
+
+验证安装:
+nvm --version
+
+
+安装Node.js 18:
+nvm install 18
+nvm use 18
+nvm alias default 18  # 设置默认版本
+
+验证版本:
+node -v
+npm -v
+
+```
+
 ### 2. 配置环境变量
 
 复制示例文件并填入你的 API Key：
